@@ -1,4 +1,8 @@
 language: erlang
+sudo: required
+os:
+  - linux
+  - osx
 
 env:
   - ARCH=x64
