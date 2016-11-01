@@ -1,3 +1,19 @@
+#Download python to current user's Download dir
+wget https://www.python.org/ftp/python/2.7.12/python-2.7.12.amd64.msi -O $home\Downloads\python-2.7.12.amd64.msi
+Start-Process "$home\Downloads\python-2.7.12.amd64.msi" /qn -Wait
+
+#Setup Python Environment Path
+[Environment]::SetEnvironmentVariable("Path", "$env:Path;C:\Python27\;C:\Python27\Scripts\", "User")
+
+wget https://nodejs.org/download/release/v7.0.0/node-v7.0.0-x64.msi -O $home\Downloads\node-v7.0.0-x64.msi
+Start-Process "$home\Downloads\node-v7.0.0-x64.msi" /qn -Wait
+
+#Windows-Build-Tools
+npm install -g windows-build-tools
+
+#Node.js native addon build tool
+npm install -g node-gyp
+
 Import-Module NetSecurity
 
 #Need to open some ports
